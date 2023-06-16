@@ -2,6 +2,7 @@ import { useState } from "react";
 import QuestionCard from "./components/QuestionCard";
 import { fetchQuizQuestions } from "./API";
 import { QuestionState, Difficulty } from "./API";
+import { GlobalStyle, Wrapper } from "./App.styles";
 
 export type AnswerObject = {
 	question: string;
@@ -68,34 +69,37 @@ const App = () => {
 	};
 
 	return (
-		<div className="App">
-			<h1>Music Quiz</h1>
-			{gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
-				<button className="start" onClick={startTrivia}>
-					Play
-				</button>
-			) : null}
-			{!gameOver && <p className="score">Score:</p>}
-			{loading && <p>Loading Questions ...</p>}
-			{!loading && !gameOver && (
-				<QuestionCard
-					question={questions[number].question}
-					answers={questions[number].answers}
-					callback={checkAnswer}
-					userAnswer={userAnswers ? userAnswers[number] : undefined}
-					questionNumb={number + 1}
-					totalQuestions={TOTAL_QUESTIONS}
-				/>
-			)}
-			{!gameOver &&
-			!loading &&
-			userAnswers.length === number + 1 &&
-			number !== TOTAL_QUESTIONS - 1 ? (
-				<button className="next" onClick={nextQuestion}>
-					Next Question
-				</button>
-			) : null}
-		</div>
+		<>
+			<GlobalStyle />
+			<Wrapper>
+				<h1>Music Quiz</h1>
+				{gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
+					<button className="start" onClick={startTrivia}>
+						Play
+					</button>
+				) : null}
+				{!gameOver && <p className="score">Score: {score}</p>}
+				{loading && <p>Loading Questions ...</p>}
+				{!loading && !gameOver && (
+					<QuestionCard
+						question={questions[number].question}
+						answers={questions[number].answers}
+						callback={checkAnswer}
+						userAnswer={userAnswers ? userAnswers[number] : undefined}
+						questionNumb={number + 1}
+						totalQuestions={TOTAL_QUESTIONS}
+					/>
+				)}
+				{!gameOver &&
+				!loading &&
+				userAnswers.length === number + 1 &&
+				number !== TOTAL_QUESTIONS - 1 ? (
+					<button className="next" onClick={nextQuestion}>
+						Next Question
+					</button>
+				) : null}
+			</Wrapper>
+		</>
 	);
 };
 
