@@ -34,12 +34,18 @@ export const Wrapper = styled.div`
 		color: #fff;
 		font-size: 2rem;
 		margin: 0;
+		font-family: Arial, Helvetica, sans-serif;
 	}
 
 	h1 {
 		font-family: Fascinate Inline, Haettenschweiler, "Arial Narrow Bold",
 			sans-serif;
-		background-image: linear-gradient(180deg, #fff, #87f1ff);
+		background-image: linear-gradient(
+			180deg,
+			rgba(2, 0, 36, 1) 0%,
+			rgba(11, 210, 0, 0.8911939775910365) 48%,
+			rgba(10, 59, 69, 1) 100%
+		);
 		background-size: 100%;
 		background-clip: text;
 		-webkit-background-clip: text;
