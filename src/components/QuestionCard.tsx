@@ -39,10 +39,7 @@ const QuestionCard: React.FC<Props> = ({
 							value={answer}
 							onClick={callback}
 						>
-							<span
-								className="answer"
-								dangerouslySetInnerHTML={{ __html: answer }}
-							></span>
+							<span dangerouslySetInnerHTML={{ __html: answer }}></span>
 						</button>
 					</ButtonWrapper>
 				))}
