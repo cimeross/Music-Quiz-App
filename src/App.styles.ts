@@ -35,6 +35,8 @@ export const Wrapper = styled.div`
 		font-size: 2rem;
 		margin: 0;
 		font-family: Arial, Helvetica, sans-serif;
+		padding-bottom: 20px;
+		text-transform: uppercase;
 	}
 
 	h1 {
@@ -53,9 +55,9 @@ export const Wrapper = styled.div`
 		-moz-background-clip: text;
 		-moz-text-fill-color: transparent;
 		filter: drop-shadow(2px 2px #0085a3);
-		font-size: 70px;
+		font-size: 80px;
 		text-align: center;
-		margin: 20px;
+		margin: 25px;
 	}
 
 	.start,
