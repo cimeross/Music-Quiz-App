@@ -6,14 +6,16 @@ export const GlobalStyle = createGlobalStyle`
         height: 100%;
     }
 
-    body {
-        background-image: url(${BGImage});
-        background-size: cover;
-        margin: 0;
-        padding: 0 20px;
-        display: flex;
-        justify-content: center;
-    }
+	body {
+    background-image: url(${BGImage});
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
     * {
         box-sizing: border-box;
@@ -75,5 +77,15 @@ export const Wrapper = styled.div`
 	.start {
 		font-size: 2rem;
 		max-width: 200px;
+	}
+
+	@media screen and (max-width: 768px) {
+		h1 {
+			font-size: 3rem;
+		}
+
+		.score {
+			font-size: 1.5rem;
+		}
 	}
 `;
